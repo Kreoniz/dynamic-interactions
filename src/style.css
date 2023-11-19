@@ -1,3 +1,51 @@
-h1 {
-    color: red;
+body {
+  padding: 50px;
+}
+
+.content {
+  display: flex;
+  gap: 50px;
+}
+
+.drop-down {
+  --main-color: pink;
+  --hover-color: lightgrey;
+  --text-color: black;
+  --border-width: 2px;
+  --border-color: black;
+  --border: var(--border-width) solid var(--border-color);
+
+  position: relative;
+  color: var(--text-color);
+  background-color: var(--main-color);
+}
+
+.drop-down-title {
+  font-weight: 600;
+  padding: 10px 30px;
+  border: var(--border);
+}
+
+.drop-down-options {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  background-color: var(--main-color);
+}
+
+.drop-down-option {
+  margin: calc(-1 * var(--border-width)) 0;
+  padding: 5px 0;
+  border: var(--border);
+}
+
+.drop-down-title:hover,
+.drop-down-option:hover {
+  cursor: pointer;
+  background-color: var(--hover-color);
+  box-shadow: 0px 0px var(--border-width) var(--border-color);
+}
+
+.drop-down.hidden .drop-down-options{
+  display: none;
 }
