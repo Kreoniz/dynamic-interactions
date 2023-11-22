@@ -2,10 +2,9 @@ import './reset.css';
 import './style.css';
 
 const dropDowns = document.querySelectorAll('.drop-down');
-console.log(dropDowns);
 
-dropDowns.forEach(dropDown => {
-  dropDown.querySelector('.drop-down-title').addEventListener('click', (e) => {
+dropDowns.forEach((dropDown) => {
+  dropDown.querySelector('.drop-down-title').addEventListener('click', () => {
     dropDown.classList.toggle('hidden');
   });
 });
