@@ -1,5 +1,32 @@
+@font-face {
+  font-family: 'Oxygen';
+  src: url('./fonts/Oxygen/Oxygen-Light.woff2') format('woff2')
+    url('./fonts/Oxygen/Oxygen-Light.ttf') format('ttf');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oxygen';
+  src: url('./fonts/Oxygen/Oxygen-Regular.woff2') format('woff2'),
+    url('./fonts/Oxygen/Oxygen-Regular.ttf') format('ttf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oxygen';
+  src: url('./fonts/Oxygen/Oxygen-Bold.woff2') format('woff2'),
+    url('./fonts/Oxygen/Oxygen-Bold.ttf') format('ttf');
+  font-weight: 600;
+  font-style: normal;
+}
+
 body {
   padding: 50px;
+  font-size: 18px;
+  font-family: "Oxygen";
+  line-height: 1.4;
 }
 
 .content {
@@ -16,13 +43,15 @@ body {
   --border: var(--border-width) solid var(--border-color);
 
   position: relative;
+  height: 100%;
+
   color: var(--text-color);
   background-color: var(--main-color);
 }
 
 .drop-down-title {
   font-weight: 600;
-  padding: 10px 30px;
+  padding: 0.5em 1em;
   border: var(--border);
 
   position: relative;
@@ -42,7 +71,7 @@ body {
 
 .drop-down-option {
   margin: calc(-1 * var(--border-width)) 0;
-  padding: 5px 0;
+  padding: 5px;
   border: var(--border);
 }
 
