@@ -29,9 +29,11 @@ body {
   line-height: 1.4;
 }
 
-.content {
+.content > * {
   display: flex;
   gap: 50px;
+
+  margin-bottom: 100px;
 }
 
 .drop-down {
@@ -43,20 +45,18 @@ body {
   --border: var(--border-width) solid var(--border-color);
 
   position: relative;
-  height: 100%;
 
   color: var(--text-color);
-  background-color: var(--main-color);
 }
 
 .drop-down-title {
+  position: relative;
+
   font-weight: 600;
   padding: 0.5em 1em;
   border: var(--border);
 
-  position: relative;
-  z-index: 100;
-
+  background-color: var(--main-color);
   transition: background-color 0.2s ease;
 }
 
@@ -85,7 +85,7 @@ body {
   outline: 1px solid var(--border-color)
 }
 
-.drop-down.hidden .drop-down-options {
+.drop-down.closed .drop-down-options {
   opacity: 0;
   transform: translate(0, -50%) scale(0);
 }
