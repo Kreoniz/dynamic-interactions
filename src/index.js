@@ -1,10 +1,12 @@
 import './reset.css';
 import './style.css';
 import DropDown from './constructors/dropDownConstructor';
+import animateSparkles from './animateSparkles';
 
 const linksDropDown = new DropDown('LINKS', {
   'The Odin Project': () => window.open('https://www.theodinproject.com'),
   "Kreoniz's github": () => window.open('https://github.com/Kreoniz'),
+  'Sparkles!': animateSparkles,
 });
 
 document.querySelector('.drop-downs').appendChild(linksDropDown.html);
