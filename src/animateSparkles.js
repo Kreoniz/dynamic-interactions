@@ -1,8 +1,10 @@
 import StarSVG from './img/star.svg';
 
 export default function animateSparkles() {
-  const screenWidth = window.screen.availWidth;
-  const screenHeight = window.screen.availHeight;
+  const STARWIDTH = 30;
+  
+  const screenWidth = document.body.offsetWidth - STARWIDTH;
+  const screenHeight = document.body.offsetHeight;
 
   const starColors = ['#15803d', '#84cc16', '#65a30d', '#4d7c0f', '#3f6212'];
 
@@ -16,7 +18,7 @@ export default function animateSparkles() {
     const yPos = Math.round(Math.random() * screenHeight);
     const randomColor = starColors[Math.round(Math.random() * starColors.length)];
 
-    starIcon.style.width = '30px';
+    starIcon.style.width = `${STARWIDTH}px`;
     starIcon.aspectRatio = 1;
     starIcon.style.top = 0;
     starIcon.style.left = `${xPos}px`;

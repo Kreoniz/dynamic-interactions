@@ -27,6 +27,7 @@ body {
   font-size: 18px;
   font-family: "Oxygen";
   line-height: 1.4;
+  width: max(100vw, fit-content);
 }
 
 .content > * {
