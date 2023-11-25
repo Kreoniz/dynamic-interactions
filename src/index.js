@@ -1,5 +1,4 @@
-import './reset.css';
-import './style.css';
+import './css/style.css';
 import DropDown from './constructors/dropDownConstructor';
 import animateSparkles from './animateSparkles';
 
