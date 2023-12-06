@@ -1,13 +1,17 @@
 @import url('./reset.css');
-@import url('./dropdown.css');
 @import url('./fonts.css');
+@import url('./dropdown.css');
+@import url('./mobilemenu.css');
 
 body {
-  padding: 50px;
   font-size: 18px;
   font-family: "Oxygen";
   line-height: 1.4;
   min-width: fit-content;
+}
+
+.content {
+  padding: 50px;
 }
 
 .content > * {
