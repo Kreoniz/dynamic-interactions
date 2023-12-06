@@ -25,7 +25,7 @@ dropDowns.forEach((dropDown) => {
 });
 
 function getWidth() {
-  return Math.max(
+  return Math.min(
     document.body.scrollWidth,
     document.documentElement.scrollWidth,
     document.body.offsetWidth,
@@ -34,36 +34,29 @@ function getWidth() {
   );
 }
 
-function getHeight() {
-  return Math.max(
-    document.body.scrollHeight,
-    document.documentElement.scrollHeight,
-    document.body.offsetHeight,
-    document.documentElement.offsetHeight,
-    document.documentElement.clientHeight
-  );
-}
-
 class CollapsingMenu {
   constructor(shownId, hiddenId) {
     this.shownMenu = document.querySelector(`#${shownId}`);
     this.hiddenMenu = document.querySelector(`#${hiddenId}`);
-    this.items = [...this.hiddenMenu.childNodes];
+    this.more = document.querySelector('#more-btn');
+
+    this.items = [...this.hiddenMenu.querySelectorAll('li')];
   }
 
   get shownItems() {
     const shownMenuItems = [];
 
-    // const screenWidth = window.screen.availWidth;
     const screenWidth = getWidth();
-    let width = 0;
+    let width = this.more.offsetWidth;
 
+    this.shownMenu.appendChild(this.more);
     for (let i = 0; i < this.items.length; i += 1) {
       width += this.items[i].offsetWidth;
       if (width <= screenWidth) {
         shownMenuItems.push(this.items[i]);
       }
     }
+    shownMenuItems.push(this.more);
 
     return shownMenuItems;
   }
@@ -71,9 +64,8 @@ class CollapsingMenu {
   get hiddenItems() {
     const hiddenMenuItems = [];
 
-    // const screenWidth = window.screen.availWidth;
     const screenWidth = getWidth();
-    let width = 0;
+    let width = this.more.offsetWidth;
 
     for (let i = 0; i < this.items.length; i += 1) {
       width += this.items[i].offsetWidth;

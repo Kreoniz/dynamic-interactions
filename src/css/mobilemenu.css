@@ -32,3 +32,9 @@
 .menu-link:hover {
   text-decoration: underline;
 }
+
+.more-btn {
+  background-color: pink;
+  padding: 10px 20px;
+  font-weight: 700;
+}
