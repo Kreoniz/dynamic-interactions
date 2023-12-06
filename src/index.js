@@ -35,10 +35,10 @@ function getWidth() {
 }
 
 class CollapsingMenu {
-  constructor(shownId, hiddenId) {
+  constructor(shownId, hiddenId, moreId) {
     this.shownMenu = document.querySelector(`#${shownId}`);
     this.hiddenMenu = document.querySelector(`#${hiddenId}`);
-    this.more = document.querySelector('#more-btn');
+    this.more = document.querySelector(`#${moreId}`);
 
     this.items = [...this.hiddenMenu.querySelectorAll('li')];
   }
@@ -78,22 +78,21 @@ class CollapsingMenu {
   }
 
   render() {
-    this.shownMenu.textContent = '';
-    this.hiddenMenu.textContent = '';
-    console.log(this.items);
-    console.log('Shown:', this.shownItems.map((e) => e.textContent), this.shownMenu.childNodes);
-    console.log('Hidden:', this.hiddenItems.map((e) => e.textContent), this.hiddenMenu.childNodes);
+    this.more.style.flex = 'initial';
 
     for (let i = 0; i < this.shownItems.length; i += 1) {
       this.shownMenu.appendChild(this.shownItems[i]);
     }
+
     for (let i = 0; i < this.hiddenItems.length; i += 1) {
       this.hiddenMenu.appendChild(this.hiddenItems[i]);
     }
+
+    this.more.style.flex = '1 1 auto';
   }
 }
 
-const menu = new CollapsingMenu('shown-menu', 'hidden-menu');
+const menu = new CollapsingMenu('shown-menu', 'hidden-menu', 'more-btn');
 menu.render();
 
 window.addEventListener('resize', () => menu.render());
