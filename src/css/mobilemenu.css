@@ -67,9 +67,9 @@
 }
 
 .more-btn::after {
-  content: '^';
+  content: 'v';
 }
 
 .more-btn.expanded::after {
-  content: 'v';
+  content: '^';
 }
