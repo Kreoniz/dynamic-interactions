@@ -40,6 +40,11 @@ class CollapsingMenu {
     this.hiddenMenu = document.querySelector(`#${hiddenId}`);
     this.more = document.querySelector(`#${moreId}`);
 
+    this.more.addEventListener('click', () => {
+      this.hiddenMenu.classList.toggle('expanded');
+      this.more.classList.toggle('expanded');
+    });
+
     this.items = [...this.hiddenMenu.querySelectorAll('li')];
   }
 
@@ -96,3 +101,4 @@ const menu = new CollapsingMenu('shown-menu', 'hidden-menu', 'more-btn');
 menu.render();
 
 window.addEventListener('resize', () => menu.render());
+

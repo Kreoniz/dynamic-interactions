@@ -11,6 +11,19 @@
   display: none;
 }
 
+.hidden-menu-items.expanded {
+  position: absolute;
+  z-index: 1;
+  background-color: #ffffff;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hidden-menu-items > * {
+  flex: 1 0 auto;
+}
+
 .menu-item {
   border: var(--border-width) solid grey;
   border-top: none;
@@ -34,8 +47,11 @@
 }
 
 .more-btn {
+  position: relative;
+
   background-color: pink;
   padding: 10px 20px;
+
   font-weight: 700;
   font-size: inherit;
 }
@@ -43,4 +59,17 @@
 .more-btn:hover {
   cursor: pointer;
   text-decoration: underline;
+}
+
+.more-btn::after,
+.more-btn::before {
+  margin-left: 5px;
+}
+
+.more-btn::after {
+  content: '^';
+}
+
+.more-btn.expanded::after {
+  content: 'v';
 }
