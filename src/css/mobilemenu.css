@@ -17,6 +17,7 @@
   background-color: #ffffff;
 
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
 }
 
@@ -61,8 +62,7 @@
   text-decoration: underline;
 }
 
-.more-btn::after,
-.more-btn::before {
+.more-btn::after {
   margin-left: 5px;
 }
 
