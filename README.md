@@ -62,3 +62,28 @@ const root = document.querySelector('#root');
 
 root.appendChild(colorDropDown.html);
 ```
+
+### Image carousel
+To initialize a carousel, path a root carousel node to the Carousel class:
+```javascript
+const rootNode = document.querySelector('#carousel');
+const carousel = new Carousel(rootNode);
+```
+
+To add an image (slide), import its path, and use the `addSlide` method:
+```javascript
+import ImagePath from './src/img/Image.jpg';
+carousel.addSlide(ImagePath);
+```
+
+To choose which slide to display use `displaySlide` method passing a slide id:
+```javascript
+// Displays 4th slide, because they are enumerated starting from 0
+carousel.displaySlide(3);
+```
+
+To run an animation of continuous slide shifting, use `runAnimation` method:
+```javascript
+// Displays 4th slide, because they are enumerated starting from 0
+carousel.runAnimation();
+```
