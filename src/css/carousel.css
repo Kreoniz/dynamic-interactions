@@ -1,0 +1,124 @@
+.carousel {
+  margin: auto;
+
+  --width: clamp(300px, 50vw, 600px);
+  --height: clamp(200px, 50vh, 350px);
+  position: relative;
+  
+  border: 2px solid black;
+  border-radius: 5px;
+  
+  width: var(--width);
+  height: var(--height);
+  
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  
+  display: flex;
+  
+  width: var(--width);
+  height: var(--height);
+    
+  transition: all 1s ease;
+}
+
+img {
+  width: var(--width);
+  height: var(--height);
+  object-fit: cover;
+}
+
+.buttons {
+  position: absolute;
+  
+  display: flex;
+  gap: 10px;
+
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+
+}
+
+.previous,
+.next {
+  appearance: none;
+  
+  position: relative;
+
+  font-family: monospace;
+  font-size: 24px;
+  
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid black;
+  padding: 5px 10px;
+  border-radius: 5px;
+  
+  transform: translateY(-50%);
+}
+
+.next:hover,
+.previous:hover {
+  cursor: pointer;
+}
+
+.previous::before,
+.next::before {
+  content: "";
+  position: absolute;
+  display: flex;
+  top: 50%;
+
+  width: 20px;
+  aspect-ratio: 1;
+  border: solid white;
+
+  border-width: 0 5px 5px 0;
+}
+
+.previous::before {
+  left: 0;
+  transform: translate(-100%, -50%) rotate(135deg);
+}
+
+.next::before {
+  right: 0;
+  transform: translate(100%, -50%) rotate(-45deg);
+}
+
+.circles {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  
+  display: flex;
+  gap: 5px
+}
+
+.circle {
+  appearance: none;
+  border: none;
+  outline: none;
+
+  border-radius: 50%;
+  width: 20px;
+  aspect-ratio: 1;
+  
+  background-color: white;
+  box-shadow: inset 0 0 0 1px black;
+  
+  transition: all 1s ease;
+}
+
+.circle.active {
+  background-color: orange;
+}
+
+.circle:hover {
+  cursor: pointer;
+}
