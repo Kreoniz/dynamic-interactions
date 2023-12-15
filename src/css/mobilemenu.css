@@ -1,10 +1,15 @@
 .menu {
+  --background: lightgrey;
+  --color: black;
+  --border-color: grey;
   --border-width: 2px;
   border-top: 10px solid black;
 }
 
 .menu-items {
   display: flex;
+  background-color: var(--background);
+  color: var(--color);
 }
 
 .hidden-menu-items {
@@ -13,8 +18,7 @@
 
 .hidden-menu-items.expanded {
   position: absolute;
-  z-index: 1;
-  background-color: #ffffff;
+  z-index: 200;
 
   display: flex;
   width: 100%;
@@ -26,7 +30,7 @@
 }
 
 .menu-item {
-  border: var(--border-width) solid grey;
+  border: var(--border-width) solid var(--border-color);
   border-top: none;
   margin-left: calc(-1 * var(--border-width));
 }
@@ -49,8 +53,11 @@
 
 .more-btn {
   position: relative;
+  border: solid var(--border-color);
+  border-width: 0 var(--border-width) var(--border-width) 0;
+  outline: none;
 
-  background-color: pink;
+  background-color: var(--background);
   padding: 10px 20px;
 
   font-weight: 700;

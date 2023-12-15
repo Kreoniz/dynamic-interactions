@@ -4,20 +4,59 @@
 @import url('./mobilemenu.css');
 @import url('./carousel.css');
 
+html {
+  background-color: lightgrey;
+}
+
+button {
+  color: inherit;
+}
+
 body {
   font-size: 18px;
-  font-family: "Oxygen";
+  font-family: "Oxygen", sans-serif;
   line-height: 1.4;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .content {
+  max-width: 600px;
+  margin: 0 auto;
   padding: 50px;
 }
 
-.content > * {
-  display: flex;
-  gap: 50px;
+.main-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
 
-  margin-bottom: 100px;
+.info-block {
+  margin: 30px 0;
+}
+
+.question-heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.paragraph {
+  margin: 10px 0;
+}
+
+.carousel {
+  margin-block: 10px;
+}
+
+.showcase-drop-down {
+  width: 200px;
+}
+
+.drop-downs {
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
 }

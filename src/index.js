@@ -16,7 +16,9 @@ const linksDropDown = new DropDown('LINKS', {
   'Sparkles!': animateSparkles,
 });
 
-document.querySelector('.drop-downs').appendChild(linksDropDown.html);
+linksDropDown.html.classList.add('showcase-drop-down');
+
+document.querySelector('#showcase-drop-down').appendChild(linksDropDown.html);
 
 const dropDowns = document.querySelectorAll('.drop-down');
 
